@@ -1,0 +1,68 @@
+@import "./variables.scss";
+
+.toolbar {
+    position: absolute;
+    height: $bar-height;
+    padding: 0 20px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    background-color: #FFFFFF;
+    box-shadow: 0px 4px 4px 0px #00000040;
+    z-index: 1000;
+    &__button {
+        width: 25px;
+        height: 25px;
+        border: none;
+        outline: none;
+    }
+
+}
+
+.settings {
+    position: absolute;
+    width: 100%;
+    height: $bar-height;
+    padding-left: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    top: $bar-height;
+    background-color: #FFFFFF;
+    box-shadow: 0px 4px 4px 0px #00000040;
+   
+}
+
+.brush {
+    background: url('../assets/brush.svg') center center no-repeat;
+}
+.square {
+    background: url('../assets/rect.svg') center center no-repeat;
+}
+.circle {
+    background: url('../assets/circle.svg') center center no-repeat;
+}
+.eraser {
+    background: url('../assets/eraser.svg') center center no-repeat;
+}
+.line {
+    background: url('../assets/line.svg') center center no-repeat;
+}
+.color {
+    background: url('../assets/color.svg') center center no-repeat;
+}
+.undo {
+    margin-left: auto;
+    background: url('../assets/undo.svg') center center no-repeat;
+}
+.redo {
+    background: url('../assets/redo.svg') center center no-repeat;
+}
+.save {
+    background: url('../assets/save.svg') center center no-repeat;
+}
+
+#fill-color {
+    opacity: 0;
+    cursor: pointer;
+}
