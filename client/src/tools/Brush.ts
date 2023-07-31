@@ -1,19 +1,17 @@
 import Tool from "./Tool";
-
 class Brush extends Tool {
-    mouseDown;
-    mouseUp;
-    constructor(canvas: HTMLCanvasElement) {
+    mouseDown = false;
+    mouseUp = false;
+    constructor(canvas: HTMLCanvasElement | null) {
         super(canvas)
-        this.mouseDown = false;
-        this.mouseUp = false;
         this.listen()
     }
     listen() {
-        this.canvas.onmouseup = this.mouseUpHandler.bind(this)
-        this.canvas.onmousedown = this.mouseDownHandler.bind(this)
-        this.canvas.onmousemove = this.mouseMoveHandler.bind(this)
-        
+        if(this.canvas) {
+            this.canvas.onmouseup = this.mouseUpHandler.bind(this)
+            this.canvas.onmousedown = this.mouseDownHandler.bind(this)
+            this.canvas.onmousemove = this.mouseMoveHandler.bind(this)
+        }
     }
     mouseUpHandler() {
         this.mouseDown = false

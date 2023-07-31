@@ -1,13 +1,14 @@
 
 class Tool {
     canvas: HTMLCanvasElement;
-    context: CanvasRenderingContext2D | null;
+    context: CanvasRenderingContext2D | null = null;
     static fillColor: string;
     static strokeColor: string;
     static lineWidth: string;
     constructor(canvas: HTMLCanvasElement) {
         this.canvas = canvas
-        this.context = canvas?.getContext('2d')
+        this.context = canvas.getContext('2d')
+        
         this.destroyTool()
     }
 

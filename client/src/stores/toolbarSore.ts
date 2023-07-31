@@ -1,13 +1,12 @@
 import { makeAutoObservable } from "mobx";
 import Tool from "../tools/Tool";
-import Brush from "../tools/Brush";
 
 class ToolbarStore {
-    tool: typeof Tool | null = null
+    tool: Tool | null = null
     constructor() {
         makeAutoObservable(this)
     }
-    setTool(tool: typeof Tool) {
+    setTool(tool: Tool) {
         this.tool = tool
     }
     setFillColor(color: string) {
@@ -20,9 +19,9 @@ class ToolbarStore {
             this.tool.strokeColor= color
         }
     }
-    setLineWidth(color: string) {
+    setLineWidth(width: string) {
         if(this.tool) {
-            this.tool.lineWidth = color
+            this.tool.lineWidth = +width
         }
     }
 }

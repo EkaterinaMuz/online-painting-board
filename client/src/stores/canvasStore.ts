@@ -2,14 +2,14 @@
 import { makeAutoObservable } from "mobx";
 
 class CanvasStore {
-    canvas: null | HTMLCanvasElement = null
+    canvas!: HTMLCanvasElement;
     undoList: string[] = []
     redoList: string[] = []
 
     constructor() {
         makeAutoObservable(this)
     }
-    setCanvas(canvas: null | HTMLCanvasElement) {
+    setCanvas(canvas: HTMLCanvasElement) {
         this.canvas = canvas
     }
 
